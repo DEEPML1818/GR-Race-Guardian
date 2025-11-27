@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  jupyter:
+    image: jupyter/base-notebook:latest
+    container_name: grr-jupyter
+    volumes:
+      - ./:/home/jovyan/work
+    working_dir: /home/jovyan/work
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: start-notebook.sh --NotebookApp.token=''

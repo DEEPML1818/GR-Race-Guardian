@@ -1,0 +1,47 @@
+{
+  "name": "gr-race-guardian-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.88.13",
+    "@react-three/fiber": "^8.15.11",
+    "@visx/visx": "^3.8.0",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.6.0",
+    "d3": "^7.8.5",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^10.16.5",
+    "leaflet": "^1.9.4",
+    "next": "^14.0.0",
+    "papaparse": "^5.5.3",
+    "plotly.js": "^2.27.0",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-plotly.js": "^2.6.0",
+    "recharts": "^2.10.3",
+    "socket.io-client": "^4.6.0",
+    "tailwindcss": "^3.3.0",
+    "three": "^0.158.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "@types/three": "^0.158.3",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

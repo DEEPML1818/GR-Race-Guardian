@@ -1,0 +1,1 @@
+{"feature_names": ["expire_at", "lap", "outing", "expire_at_mean", "expire_at_max", "lap_mean", "lap_max", "outing_mean", "outing_max", "telemetry_value_mean", "telemetry_value_max", "vehicle_number_mean", "vehicle_number_max"], "target": "value"}

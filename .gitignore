@@ -1,0 +1,21 @@
+# Python
+backend-python/.venv
+backend-python/models
+__pycache__
+
+# Node
+node_modules
+frontend-next/node_modules
+
+# OS
+.DS_Store
+
+# outputs
+*.log
+
+# Storage (JSON files)
+backend-python/storage/
+storage/
+*.db
+*.sqlite
+*.sqlite3

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Replay Endpoint Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .container {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #00d4ff;
+            margin-top: 0;
+        }
+
+        button {
+            background: #00d4ff;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #00b8e6;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1a1a1a;
+            border-radius: 5px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .error {
+            border-left-color: #ff4444;
+        }
+
+        .success {
+            border-left-color: #44ff44;
+        }
+
+        pre {
+            overflow-x: auto;
+            background: #0a0a0a;
+            padding: 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Replay Endpoint Browser Test</h1>
+        <p>This tests if the browser can access the /replay/build endpoint</p>
+
+        <button onclick="testEndpoint()">Test /replay/build Endpoint</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function testEndpoint() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<div class="result">Testing...</div>';
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/replay/build', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        track_id: 'barber',
+                        race_id: 'race-1'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            <h3>SUCCESS! (Status: ${response.status})</h3>
+                            <p><strong>Track:</strong> ${data.track_name}</p>
+                            <p><strong>Laps:</strong> ${data.laps}</p>
+                            <p><strong>Drivers:</strong> ${data.drivers ? data.drivers.length : 0}</p>
+                            <details>
+                                <summary>Full Response</summary>
+                                <pre>${JSON.stringify(data, null, 2)}</pre>
+                            </details>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="result error">
+                            <h3>ERROR (Status: ${response.status})</h3>
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        <h3>FETCH ERROR</h3>
+                        <p>${error.message}</p>
+                        <p><strong>This usually means:</strong></p>
+                        <ul>
+                            <li>Server is not running on port 8000</li>
+                            <li>CORS is blocking the request</li>
+                            <li>Network connectivity issue</li>
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

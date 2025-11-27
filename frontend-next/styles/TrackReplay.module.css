@@ -1,0 +1,675 @@
+/* Track Replay & Race Visualization Styles */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ff4444, #ff8844);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.mainContent {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Track Selection */
+.trackSelection {
+  margin-bottom: 2rem;
+}
+
+.trackSelection h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.trackGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.trackCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.trackCard:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ff4444;
+  transform: translateY(-2px);
+}
+
+.trackCard.selected {
+  background: rgba(255, 68, 68, 0.2);
+  border-color: #ff4444;
+}
+
+.trackCard h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.trackCard p {
+  margin: 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Race Selection */
+.raceSelection {
+  margin-bottom: 2rem;
+}
+
+.raceSelection h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.raceGrid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.raceCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.raceCard:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ff8844;
+}
+
+.raceCard.selected {
+  background: rgba(255, 136, 68, 0.2);
+  border-color: #ff8844;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #ff4444;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.error {
+  background: rgba(255, 68, 68, 0.2);
+  border: 2px solid #ff4444;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Replay Section */
+.replaySection {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.replayHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.replayHeader h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.trackInfo {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.trackInfo span {
+  margin: 0 0.5rem;
+}
+
+/* Playback Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.controlBtn {
+  background: linear-gradient(135deg, #ff4444, #ff8844);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controlBtn:hover {
+  transform: scale(1.05);
+}
+
+.controlBtn:active {
+  transform: scale(0.95);
+}
+
+.lapCounter {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.speedControl {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.speedControl label {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.speedControl select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Lap Slider */
+.lapSlider {
+  margin-bottom: 2rem;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4444;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4444;
+  cursor: pointer;
+  border: none;
+}
+
+/* Visualization Grid */
+.visualizationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 968px) {
+  .visualizationGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Track Map */
+.trackMap {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.trackMap h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.trackMapPlaceholder {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trackMapPlaceholder p {
+  color: #aaa;
+  margin: 0.5rem 0;
+}
+
+/* Position Table */
+.positionTable {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.positionTable h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.positionTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.positionTable thead {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.positionTable th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.positionTable td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.positionTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.position {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff8844;
+}
+
+/* Events Section */
+.eventsSection {
+  background: rgba(255, 136, 68, 0.1);
+  border: 2px solid rgba(255, 136, 68, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.eventsSection h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #ff8844;
+}
+
+.eventsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eventItem {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.controlBtn {
+  background: linear-gradient(135deg, #ff4444, #ff8844);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controlBtn:hover {
+  transform: scale(1.05);
+}
+
+.controlBtn:active {
+  transform: scale(0.95);
+}
+
+.lapCounter {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.speedControl {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.speedControl label {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.speedControl select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Lap Slider */
+.lapSlider {
+  margin-bottom: 2rem;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4444;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4444;
+  cursor: pointer;
+  border: none;
+}
+
+/* Visualization Grid */
+.visualizationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 968px) {
+  .visualizationGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Track Map */
+.trackMap {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.trackMap h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.trackMapPlaceholder {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trackMapPlaceholder p {
+  color: #aaa;
+  margin: 0.5rem 0;
+}
+
+/* Position Table */
+.positionTable {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.positionTable h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.positionTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.positionTable thead {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.positionTable th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.positionTable td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.positionTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.position {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff8844;
+}
+
+/* Events Section */
+.eventsSection {
+  background: rgba(255, 136, 68, 0.1);
+  border: 2px solid rgba(255, 136, 68, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.eventsSection h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #ff8844;
+}
+
+.eventsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eventItem {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #ff8844;
+  font-size: 0.95rem;
+}
+
+.eventItem:last-child {
+  margin-bottom: 0;
+}
+
+/* SVG Track Map Styles */
+.svgTrackMapContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.trackSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.trackOutline {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.trackSurface {
+  transition: stroke 0.3s ease;
+}
+
+.trackCenterLine {
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.driverMarker {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.driverMarker:hover {
+  transform: scale(1.2);
+}
+
+.carMarker {
+  filter: drop-shadow(0 0 4px rgba(255, 68, 68, 0.8));
+}
+
+.driverLabel {
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.trackInfoOverlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.trackName {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.trackStats {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.trackStats span {
+  margin-right: 0.5rem;
+}
+
+.trackMapLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.trackMapHint {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}

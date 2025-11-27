@@ -1,0 +1,16 @@
+syntax = "proto3";
+package grrg;
+
+service Predictor {
+  rpc Predict (PredictRequest) returns (PredictResponse) {}
+}
+
+message PredictRequest {
+  string model_path = 1;
+  string csv = 2;
+}
+
+message PredictResponse {
+  repeated double prediction = 1;
+  repeated string features_used = 2;
+}

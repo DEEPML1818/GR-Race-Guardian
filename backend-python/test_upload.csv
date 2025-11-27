@@ -1,0 +1,3 @@
+timestamp,vehicle_number,lap,telemetry_name,telemetry_value
+2023-01-01 12:00:00,1,1,speed,100
+2023-01-01 12:00:01,1,1,speed,105

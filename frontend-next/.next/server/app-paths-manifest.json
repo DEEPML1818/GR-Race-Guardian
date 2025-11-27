@@ -1,0 +1,4 @@
+{
+  "/replay/[track]/page": "app/replay/[track]/page.js",
+  "/replay/page": "app/replay/page.js"
+}

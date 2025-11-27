@@ -1,0 +1,13 @@
+{
+  "name": "gr-race-guardian",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "pipeline": "node tools/run_pipeline.js",
+    "api": "node tools/run_server.js",
+    "frontend": "node tools/run_frontend.js",
+    "frontend:serve": "node frontend-demo/server.js",
+    "dev": "node tools/monitor.js"
+  },
+  "dependencies": {}
+}
