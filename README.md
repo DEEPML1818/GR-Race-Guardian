@@ -88,7 +88,7 @@ Click below to watch how the **Digital Twin technology** predicts race outcomes 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/DEEPML1818/GR-Race-Guardian.git
    cd gr-race-guardian
    ```
 
