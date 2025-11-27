@@ -19,6 +19,11 @@ GR Race Guardian is a comprehensive racing analytics platform that provides:
 
 Think of it as having a **digital race engineer** analyzing your race in real-time!
 
+**See It In Action**
+
+Click below to watch how the **Digital Twin technology** predicts race outcomes and driver behavior:
+[![View Digital Twin Enhancement Demo](https://github.com/user-attachments/assets/1b6ef50b-dd14-425a-bfc8-9b5950deaa13)](https://vimeo.com/1141058969?share=copy&fl=sv&fe=ci)
+
 ---
 
 ## ✨ Key Features
@@ -287,18 +292,6 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment guide.
 - ✅ Advanced frontend components
 - ✅ Bull Queue system
 - ✅ Deployment guides
-
----
-
-## 🤝 Contributing
-
-This is a complete platform. All features from the development roadmap are implemented!
-
----
-
-## 📝 License
-
-[Your License Here]
 
 ---
 
