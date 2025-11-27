@@ -69,6 +69,16 @@ Click below to watch how the **Digital Twin technology** predicts race outcomes 
 
 ## 🚀 Quick Start
 
+## 📋 Requirements
+
+> **Note:** GR Race Guardian requires track data files and sufficient computing resources to run effectively. The machine learning models and Monte Carlo simulations are computationally intensive.
+
+**Minimum System Requirements:**
+- 8GB RAM
+- Quad-core processor (2.5GHz+)
+- 22GB free disk space
+- Track data files (GPS coordinates, lap times, telemetry) **all must be paste in the front row of the file to see in action**
+
 ### Prerequisites
 - Node.js 18+
 - Python 3.11+
